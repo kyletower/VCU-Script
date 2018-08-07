@@ -11,6 +11,16 @@ FOR /F "tokens=2 delims='='" %%A in ('wmic Bios Get SerialNumber /value') do SET
 ECHO Serial Number is %serialnumber%
 
 
+REM Run Multiple PS Commands
+REM powershell -command "& {&'some-command' someParam}"; "& {&'some-command' -SpecificArg someParam}"
+:Prep_PowerShell
+PowerShell -command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser"; "Get-Packageprovider Chocolatey"; "Install-Package -Name AdobeReader -force -verbose"; "Install-Package -name AdblockPlusChrome -force -verbose" 
+
+GOTO End_Routine
+
+
+
+
 :Create_Source_Target_Variables
 SET "Source=S:\Software\Standard Software"
 SET "Target=%UserProfile%\Desktop\TEMP"
