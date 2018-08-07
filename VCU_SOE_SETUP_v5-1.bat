@@ -1,6 +1,6 @@
 @ECHO off
 title %computername%
-ECHO Created by Kyle Tower with help from Kyle Welch, Google
+ECHO Created by Kyle Tower with help from Kyle Welch and Google Searching various forums.
 ECHO Used Scott Burke's template code for the Printers
 
 ECHO Disabling UAC for this account. Requires reboot to be in effect.
@@ -151,7 +151,7 @@ c:
 md Drivers
 expand "c:\users\SOE Admin\downloads\9350-WIN10-A11-9WTJ2.CAB" c:\Drivers -f:*
 cd Drivers
-for /f "tokens=*" %a in ('dir *.inf /b /s') do (pnputil ñi -a "%a\..\*.inf")
+for /f "tokens=*" %a in ('dir *.inf /b /s') do (pnputil ‚Äìi -a "%a\..\*.inf")
 
 GOTO End_Routine
 
@@ -535,7 +535,7 @@ net user Administrator %password% /active:yes
 GOTO End_Routine
 
 
-REM Set DNS Ö Append these DNS Suffixes
+REM Set DNS ‚Ä¶ Append these DNS Suffixes
 :Set_DNS
 REM Source: https://superuser.com/questions/463096/change-dns-with-script
 SETLOCAL EnableDelayedExpansion
@@ -662,10 +662,10 @@ REM Remove all apps except store from new accounts created afterwards
 REM Get-appxprovisionedpackage -online | where-object {$_.packagename -notlike '*store*'} | Remove-AppxProvisionedPackage -online
 
 REM  4. To Remove All Apps except Store from New Accounts Created Afterwards
-REM PowerShell -Command "Get-appxprovisionedpackage ñonline | where-object {$_.packagename ñnotlike '*store*'} | Remove-AppxProvisionedPackage -online"
+REM PowerShell -Command "Get-appxprovisionedpackage ‚Äìonline | where-object {$_.packagename ‚Äìnotlike '*store*'} | Remove-AppxProvisionedPackage -online"
 
 REM  5. To Remove All Apps except Store from All Current Accounts on PC
-REM PowerShell -Command "Get-AppxPackage -AllUsers | where-object {$_.name ñnotlike ì*store*î} | Remove-AppxPackage"
+REM PowerShell -Command "Get-AppxPackage -AllUsers | where-object {$_.name ‚Äìnotlike ‚Äú*store*‚Äù} | Remove-AppxPackage"
 
 
 @rem *** Disable Some Service ***
@@ -1041,7 +1041,7 @@ ECHO Launching Ninite Installer
 GOTO End_Routine
 
 
-REM Download and Install Adobe ReaderÖ launch website
+REM Download and Install Adobe Reader‚Ä¶ launch website
 :Install_Adobe_reader
 ECHO Launching Adobe Reader Installer
 REM website
@@ -1080,7 +1080,7 @@ GOTO End_Routine
 
 
 
-REM Install latest Java from Oracleís website
+REM Install latest Java from Oracle‚Äôs website
 REM DEPRECATED, Ninite takes care of 32-bit and 64-bit Java
 :Install_Java
 REM https://www.java.com/en/download
@@ -1228,7 +1228,7 @@ GOTO End_Routine
 
 
 
-REM Update LANDesk TicketÖ launch servicedesk.vcu.edu
+REM Update LANDesk Ticket‚Ä¶ launch servicedesk.vcu.edu
 :Update_LANDesk_Ticket
 ECHO Include detailednotes and updates
 ECHO Notify User
@@ -1251,7 +1251,7 @@ GOTO End_Routine
 
 
 REM PRINTER INSTALLATION
-REM Remove any Auto-Detected/Installed Printers that the user shouldnít have access to.
+REM Remove any Auto-Detected/Installed Printers that the user shouldn‚Äôt have access to.
 REM Refer to IP Address Sheet: https://docs.google.com/spreadsheets/d/1t3PQtZxicByiNLvgFb2E4ra59pojhjwr3pFKgCp1kIA/edit#gid=13
 
 REM set up seppage.sep
