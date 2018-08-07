@@ -14,7 +14,7 @@ ECHO Serial Number is %serialnumber%
 REM Run Multiple PS Commands
 REM powershell -command "& {&'some-command' someParam}"; "& {&'some-command' -SpecificArg someParam}"
 :Prep_PowerShell
-PowerShell -command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser"; "Get-Packageprovider Chocolatey"; "Install-Package -Name AdobeReader -force -verbose"; "Install-Package -name AdblockPlusChrome -force -verbose" 
+PowerShell -command "Set-ExecutionPolicy Unrestricted -Scope CurrentUser"; 
 
 GOTO End_Routine
 
@@ -78,7 +78,7 @@ ECHO   6.  Install Sophos
 ECHO   7.  Install TeamViewer 9
 ECHO   8.  Install Ninite (Chrome, Firefox, Java 8, .NET 4.7, VLC)
 ECHO   9.  Install MS Office 2016
-ECHO   10. Install Adobe Reader [you must make it default]
+ECHO   10. Install Reader [you must make it default]
 ECHO   11. Install Cicsco AnyConnect VPN
 ECHO   12. Install LANDesk
 ECHO   13. Install SPSS
@@ -1054,10 +1054,12 @@ GOTO End_Routine
 REM Download and Install Adobe Reader… launch website
 :Install_Adobe_reader
 ECHO Launching Adobe Reader Installer
+PowerShell -command "Get-Packageprovider Chocolatey"; "Install-Package -Name AdobeReader -force -verbose";
+
 REM website
 REM make adobe reader default PDF
-start chrome.exe "https://get.adobe.com/reader/"
-start ms-settings:defaultapps
+REM start chrome.exe "https://get.adobe.com/reader/"
+REM start ms-settings:defaultapps
 
 GOTO End_Routine
 
@@ -1082,9 +1084,11 @@ REM start https://www.google.com/chrome/?system=true&standalone=1&platform=win64
 
 REM Config Google Chrome
 :Configure_Chrome
+PowerShell -command "Install-Package -name AdblockPlusChrome -force -verbose" 
+
 ECHO Launching Chrome
 start chrome.exe "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb"
-start ms-settings:defaultapps
+REM start ms-settings:defaultapps
 
 GOTO End_Routine
 
