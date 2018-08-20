@@ -84,31 +84,20 @@ ECHO   10. Install Reader [you must make it default]
 ECHO   11. Install Cicsco AnyConnect VPN
 ECHO   12. Install LANDesk
 ECHO   13. Install SPSS
-ECHO   14. Configure Firefox for Adblock Plus and Flash
-ECHO   15. Configure Chrome for Adblock Plus
-ECHO   16. Change Default App Associations [for new users and profiles]
-ECHO   17. Device Manager: Ensure All Devices Have Drivers
-ECHO   18. Get Dell Drivers
-ECHO   19. Install Ricoh 8001 Printer (4th Floor Only)
-ECHO   20. Windows Updates
-ECHO   21. Install DDPE 8.18 (64-bit)
-ECHO   22. Delete Desktop TEMP Files 
-ECHO   23. Update LANDesk Ticket
-ECHO   24. Restart Windows
-ECHO   25. Uninstall Sophos
-ECHO   26. Fix Microsoft Office 2016 Registry
-ECHO   27. Install SPSS 25 or 24 License (valid through Dec 2018)
-ECHO   28. Forget VCU SafeNet Wireless Profile
-ECHO   29. Full Scan of HDD chkdsk c: /r
-ECHO   30. dism /online /cleanup-image /restorehealth
-ECHO   31. sfc /scannow
-ECHO   32. Emptpy ALL Recycle Bins rd /s c:\$Recycle.Bin
-ECHO   33. Defrag (Only for HDDs, not SSDs)
-ECHO   34. defrag c: /b (Boot Defrag, only for HDDs, not SSDs)
-ECHO   35. bcdedit /set {default} safeboot network (Boot into Safe Mode with Networking)
-ECHO   36. bcdedit /deletevalue {default} safeboot (Normal Boot into Windows)
-ECHO   37. Install Ricoh 4002 Printer (Dean's Office Only)
-ECHO   x.  Exit
+ECHO   14. Install Zoom
+ECHO   15. Configure Firefox for Adblock Plus and Flash
+ECHO   16. Configure Chrome for Adblock Plus
+ECHO   17. Change Default App Associations [for new users and profiles]
+ECHO   18. Device Manager: Ensure All Devices Have Drivers
+ECHO   19. Get Dell Drivers
+ECHO   20. Install Ricoh 8001 Printer (4th Floor Only)
+ECHO   21. Install Ricoh 4002 Printer (Dean's Office Only)
+ECHO   22. Windows Updates
+ECHO   23. Install DDPE 8.18 (64-bit)
+ECHO   24. Delete Desktop TEMP Files 
+ECHO   25. Update LANDesk Ticket
+ECHO   26. MORE OPTIONS
+ECHO   x. Exit
 ECHO.
 SET /P number=Choice: 
 
@@ -138,12 +127,37 @@ IF %number%==22 GOTO Delete_Desktop_Temp_Files
 IF %number%==23 GOTO Update_LANDesk_Ticket
 IF %number%==24 GOTO Restart_Windows
 IF %number%==25 GOTO Uninstall_Sophos
-IF %number%==26 GOTO Fix_MS_Office_2016
+
+
+IF %number%==26 GOTO More_Options
+
+Fix_MS_Office_2016
 IF %number%==27 GOTO SPSS_License
 IF %number%==28 GOTO Forget_VCU_Wifi
 IF %number%==37 GOTO Install_Ricoh_4002
 IF %number%==38 GOTO Install_Dell_Cab
 IF %number%==x GOTO EXIT /B 0
+
+
+More_Options:
+ECHO   26. Restart Windows
+ECHO   25. Uninstall Sophos
+ECHO   26. Fix Microsoft Office 2016 Registry
+ECHO   27. Install SPSS 25 or 24 License (valid through Dec 2018)
+ECHO   28. Forget VCU SafeNet Wireless Profile
+ECHO   29. Full Scan of HDD chkdsk c: /r
+ECHO   30. dism /online /cleanup-image /restorehealth
+ECHO   31. sfc /scannow
+ECHO   32. Emptpy ALL Recycle Bins rd /s c:\$Recycle.Bin
+ECHO   33. Defrag (Only for HDDs, not SSDs)
+ECHO   34. defrag c: /b (Boot Defrag, only for HDDs, not SSDs)
+ECHO   35. bcdedit /set {default} safeboot network (Boot into Safe Mode with Networking)
+ECHO   36. bcdedit /deletevalue {default} safeboot (Normal Boot into Windows)
+ECHO   37. Install Ricoh 4002 Printer (Dean's Office Only)
+ECHO   x.  Exit
+
+
+
 
 :End_Routine
 REM 
@@ -152,6 +166,11 @@ REM rundll32.exe cmdext.dll,MessageBeepStub
 
 PAUSE
 GOTO Menu
+
+
+
+
+
 
 :Install_Zoom
 robocopy "%ZoomSource%" "%ZoomTarget%" ZoomInstallerFull.msi
