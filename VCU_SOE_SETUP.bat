@@ -132,7 +132,7 @@ IF %number%==25 GOTO Update_LANDesk_Ticket
 
 IF %number%==m GOTO More_Options
 
-More_Options:
+:More_Options
 ECHO   1.  Restart Windows
 ECHO   2.  Uninstall Sophos
 ECHO   3.  Fix Microsoft Office 2016 Registry
