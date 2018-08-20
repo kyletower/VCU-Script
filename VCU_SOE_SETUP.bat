@@ -53,6 +53,8 @@ SET "DefaultAppTarget=%Target%\Defaults"
 SET "RamsVPNSource=%Source%\Rams VPN"
 SET "RamsVPNTarget=%Target%\Rams VPN"
 
+SET "ZoomSource=%Source%\Zoom"
+SET "ZoomTarget=%Target%\Zoom"
 
 REM MAIN
 GOTO Menu
@@ -150,6 +152,13 @@ REM rundll32.exe cmdext.dll,MessageBeepStub
 
 PAUSE
 GOTO Menu
+
+:Install_Zoom
+robocopy "%ZoomSource%" "%ZoomTarget%" ZoomInstallerFull.msi
+cd %ZoomTarget%
+msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAutoUpdate="true" ZSSOHOST="vcu.zoom.us" ZConfig="nogoogle=1;nofacebook=1;login_domain=vcu.edu;AddFWException=1;kCmdParam_InstallOption=8"
+GOTO End_Routine
+
 
 
 :Install_Dell_Cab
