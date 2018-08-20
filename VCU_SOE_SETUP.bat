@@ -3,8 +3,8 @@ title %computername%
 ECHO Created by Kyle Tower with help from Kyle Welch and Google Searching various forums.
 ECHO Used Scott Burke's template code for the Printers
 
-ECHO Disabling UAC for this account. Requires reboot to be in effect.
-reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f
+REM ECHO Disabling UAC for this account. Requires reboot to be in effect.
+REM reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f
 
 REM Get Serial Number for use with Loading Dell.com/Drivers/SerialTag
 FOR /F "tokens=2 delims='='" %%A in ('wmic Bios Get SerialNumber /value') do SET serialnumber=%%A
