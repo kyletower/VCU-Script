@@ -96,7 +96,7 @@ ECHO   22. Windows Updates
 ECHO   23. Install DDPE 8.18 (64-bit)
 ECHO   24. Delete Desktop TEMP Files 
 ECHO   25. Update LANDesk Ticket
-ECHO   26. MORE OPTIONS
+ECHO   m. MORE OPTIONS
 ECHO   x. Exit
 ECHO.
 SET /P number=Choice: 
@@ -115,48 +115,51 @@ IF %number%==10 GOTO Install_Adobe_reader
 IF %number%==11 GOTO Install_Cisco_VPN
 IF %number%==12 GOTO Install_LANDesk
 IF %number%==13 GOTO Install_SPSS
-IF %number%==14 GOTO Configure_Firefox
-IF %number%==15 GOTO Configure_Chrome
-IF %number%==16 GOTO Change_Defaults
-IF %number%==17 GOTO Device_Manager
-IF %number%==18 GOTO Get_Dell_Drivers
-IF %number%==19 GOTO Install_Ricoh8001
-IF %number%==20 GOTO Windows_Updates
-IF %number%==21 GOTO Install_DDPE
-IF %number%==22 GOTO Delete_Desktop_Temp_Files
-IF %number%==23 GOTO Update_LANDesk_Ticket
-IF %number%==24 GOTO Restart_Windows
-IF %number%==25 GOTO Uninstall_Sophos
 
+IF %number%==14 GOTO Install_Zoom
 
-IF %number%==26 GOTO More_Options
+IF %number%==15 GOTO Configure_Firefox
+IF %number%==16 GOTO Configure_Chrome
+IF %number%==17 GOTO Change_Defaults
+IF %number%==18 GOTO Device_Manager
+IF %number%==19 GOTO Get_Dell_Drivers
+IF %number%==20 GOTO Install_Ricoh8001
+IF %number%==21 GOTO Install_Ricoh_4002
+IF %number%==22 GOTO Windows_Updates 
+IF %number%==23 GOTO Install_DDPEUpdate_LANDesk_Ticket
+IF %number%==24 GOTO Delete_Desktop_Temp_Files
+IF %number%==25 GOTO Update LANDesk Ticket
 
-Fix_MS_Office_2016
-IF %number%==27 GOTO SPSS_License
-IF %number%==28 GOTO Forget_VCU_Wifi
-IF %number%==37 GOTO Install_Ricoh_4002
-IF %number%==38 GOTO Install_Dell_Cab
-IF %number%==x GOTO EXIT /B 0
-
+IF %number%==m GOTO More_Options
 
 More_Options:
-ECHO   26. Restart Windows
-ECHO   25. Uninstall Sophos
-ECHO   26. Fix Microsoft Office 2016 Registry
-ECHO   27. Install SPSS 25 or 24 License (valid through Dec 2018)
-ECHO   28. Forget VCU SafeNet Wireless Profile
-ECHO   29. Full Scan of HDD chkdsk c: /r
-ECHO   30. dism /online /cleanup-image /restorehealth
-ECHO   31. sfc /scannow
-ECHO   32. Emptpy ALL Recycle Bins rd /s c:\$Recycle.Bin
-ECHO   33. Defrag (Only for HDDs, not SSDs)
-ECHO   34. defrag c: /b (Boot Defrag, only for HDDs, not SSDs)
-ECHO   35. bcdedit /set {default} safeboot network (Boot into Safe Mode with Networking)
-ECHO   36. bcdedit /deletevalue {default} safeboot (Normal Boot into Windows)
-ECHO   37. Install Ricoh 4002 Printer (Dean's Office Only)
+ECHO   1.  Restart Windows
+ECHO   2.  Uninstall Sophos
+ECHO   3.  Fix Microsoft Office 2016 Registry
+ECHO   4.  Install SPSS 25 or 24 License (valid through Dec 2018)
+ECHO   5.  Forget VCU SafeNet Wireless Profile
+ECHO   6.  Install Dell Driver's via .cab file
 ECHO   x.  Exit
+ECHO.
+ECHO   NOTES:
+ECHO   Full Scan of HDD chkdsk c: /r
+ECHO   dism /online /cleanup-image /restorehealth
+ECHO   sfc /scannow
+ECHO   Empty ALL Recycle Bins rd /s c:\$Recycle.Bin
+ECHO   Defrag (Only for HDDs, not SSDs)
+ECHO   defrag c: /b (Boot Defrag, only for HDDs, not SSDs)
+ECHO   bcdedit /set {default} safeboot network (Boot into Safe Mode with Networking)
+ECHO   bcdedit /deletevalue {default} safeboot (Normal Boot into Windows)
 
+SET /P number=Choice: 
 
+IF %number%==1 GOTO Restart_Windows
+IF %number%==2 GOTO Uninstall_Sophos 
+IF %number%==3 GOTO Fix_MS_Office_2016
+IF %number%==4 GOTO SPSS_License
+IF %number%==5 GOTO Forget_VCU_Wifi
+IF %number%==6 GOTO Install_Dell_Cab
+IF %number%==x GOTO Menu
 
 
 :End_Routine
@@ -1495,7 +1498,7 @@ rundll32 printui.dll,PrintUIEntry /dl /n "RICOH Aficio MP 7500 PCL 5e" /q
 
 
 REM *************
-REM 2nd Floor, Dean's Office Ricoh 4001
+REM 2nd Floor, Dean's Office Ricoh 4002
 REM *************
 
 :VCURicoh4002
