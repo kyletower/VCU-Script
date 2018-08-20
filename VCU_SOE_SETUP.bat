@@ -128,7 +128,7 @@ IF %number%==21 GOTO Install_Ricoh_4002
 IF %number%==22 GOTO Windows_Updates 
 IF %number%==23 GOTO Install_DDPEUpdate_LANDesk_Ticket
 IF %number%==24 GOTO Delete_Desktop_Temp_Files
-IF %number%==25 GOTO Update LANDesk Ticket
+IF %number%==25 GOTO Update_LANDesk_Ticket
 
 IF %number%==m GOTO More_Options
 
