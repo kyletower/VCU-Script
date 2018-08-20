@@ -130,6 +130,8 @@ IF %number%==23 GOTO Install_DDPEUpdate_LANDesk_Ticket
 IF %number%==24 GOTO Delete_Desktop_Temp_Files
 IF %number%==25 GOTO Update_LANDesk_Ticket
 
+IF %number%==x EXIT /B 0
+
 IF %number%==m GOTO More_Options
 
 :More_Options
