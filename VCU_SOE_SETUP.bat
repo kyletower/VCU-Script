@@ -141,6 +141,7 @@ ECHO   3.  Fix Microsoft Office 2016 Registry
 ECHO   4.  Install SPSS 25 or 24 License (valid through Dec 2018)
 ECHO   5.  Forget VCU SafeNet Wireless Profile
 ECHO   6.  Install Dell Driver's via .cab file
+ECHO   7.  Install Chocolatey
 ECHO   x.  Exit
 ECHO.
 ECHO   NOTES:
@@ -161,8 +162,8 @@ IF %number%==3 GOTO Fix_MS_Office_2016
 IF %number%==4 GOTO SPSS_License
 IF %number%==5 GOTO Forget_VCU_Wifi
 IF %number%==6 GOTO Install_Dell_Cab
+IF %number%==7 GOTO Install_Chocolatey
 IF %number%==x GOTO Menu
-
 
 :End_Routine
 REM 
@@ -174,7 +175,33 @@ GOTO Menu
 
 
 
+:Install_Chocolatey
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+choco install adobereader
+choco install flashplayerplugin
+choco install googlechrome
+choco install jre8
+choco install flashplayeractivex
+choco install firefox
+choco install vlc
+choco install ccleaner
+choco install adblockplusie
+choco install adblockpluschrome
+choco install adblockplusfirefox
+choco install teamviewer
+choco install youtube-dl
+choco install ffmpeg
+choco install windirstat
+choco install dotnet4.0
+choco install audacity
+choco install rufus
 
+choco install notepadplusplus.install
+choco install atom
+choco install python3
+choco install vscode
+
+GOTO End_Routine
 
 
 :Install_Zoom
