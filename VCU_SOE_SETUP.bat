@@ -177,33 +177,33 @@ GOTO Menu
 
 :Install_Chocolatey
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-choco install adobereader
-choco install flashplayerplugin
-choco install googlechrome
-choco install jre8
-choco install flashplayeractivex
-choco install firefox
-choco install vlc
-choco install ccleaner
-choco install adblockplusie
-choco install adblockpluschrome
-choco install adblockplusfirefox
-choco install teamviewer
-choco install youtube-dl
-choco install ffmpeg
-choco install windirstat
-choco install dotnet4.0
-choco install audacity
-choco install audacity-lame
-choco install rufus
+choco install -y adobereader
+choco install -y flashplayerplugin
+choco install -y googlechrome
+choco install -y jre8
+choco install -y flashplayeractivex
+choco install -y firefox
+choco install -y vlc
+choco install -y ccleaner
+choco install -y adblockplusie
+choco install -y adblockpluschrome
+choco install -y adblockplusfirefox
+choco install -y teamviewer
+choco install -y youtube-dl
+choco install -y ffmpeg
+choco install -y windirstat
+choco install -y dotnet4.0
+choco install -y audacity
+choco install -y audacity-lame
+choco install -y rufus
 
-choco install notepadplusplus.install
-choco install atom
-choco install python3
-choco install vscode
-choco install vscode-csharp
-choco install unity
-choco install unitywebplayer
+choco install -y notepadplusplus.install
+choco install -y atom
+choco install -y python3
+choco install -y vscode
+choco install -y vscode-csharp
+choco install -y unity
+choco install -y unitywebplayer
 
 REM choco install pstools
 REM choco install psexec
