@@ -194,12 +194,30 @@ choco install ffmpeg
 choco install windirstat
 choco install dotnet4.0
 choco install audacity
+choco install audacity-lame
 choco install rufus
 
 choco install notepadplusplus.install
 choco install atom
 choco install python3
 choco install vscode
+choco install vscode-csharp
+choco install unity
+choco install unitywebplayer
+
+REM choco install pstools
+REM choco install psexec
+REM choco install teracopy
+REM choco install sudo
+
+REM choco install zotero-standalone
+REM choco install nsis
+REM choco install googlechrome-allusers
+REM choco install handbrake.install
+REM choco install kodi
+REM choco install autoit
+REM choco install discord
+REM choco install makemkv
 
 GOTO End_Routine
 
