@@ -235,9 +235,9 @@ ECHO With the introduction of Windows Vista, Windows will not prompt the "Found 
 ECHO any longer and the installation occurs silently. The end user will only see Windows UA prompts 
 ECHO for unsigned driver. Total runtime ~ 10 - 15 minutes depending on number of driver in the CAB file.
 
-c:
+cd /
 md Drivers
-expand "c:\users\SOE Admin\downloads\9350-WIN10-A11-9WTJ2.CAB" c:\Drivers -f:*
+expand "%userprofile%\downloads\*.CAB" c:\Drivers -f:*
 cd Drivers
 for /f "tokens=*" %a in ('dir *.inf /b /s') do (pnputil –i -a "%a\..\*.inf")
 
