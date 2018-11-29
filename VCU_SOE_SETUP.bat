@@ -1302,7 +1302,7 @@ REM echo %SPSS24%
 IF EXIST "%SPSS25%" (
 Echo Registering New License for SPSS 25
     cd %SPSS25%
-    licenseactivator.exe 5f2f53a6f5b98524b83b
+    licenseactivator.exe 564299dc60f21283766a
 ) ELSE (
 	Echo SPSS 25 not found.
 	IF EXIST "%SPSS24%" (
