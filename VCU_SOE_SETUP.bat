@@ -237,7 +237,7 @@ ECHO for unsigned driver. Total runtime ~ 10 - 15 minutes depending on number of
 
 cd /
 md Drivers
-expand "%userprofile%\downloads\*.CAB" c:\Drivers -f:*
+start cmd.exe /c expand "%userprofile%\downloads\*.CAB" c:\Drivers -f:*
 cd Drivers
 for /f "tokens=*" %a in ('dir *.inf /b /s') do (pnputil –i -a "%a\..\*.inf")
 
