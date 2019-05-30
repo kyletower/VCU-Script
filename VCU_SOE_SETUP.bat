@@ -237,10 +237,11 @@ ECHO for unsigned driver. Total runtime ~ 10 - 15 minutes depending on number of
 
 cd /
 md Drivers
+echo Looking for *.cab in %userprofile\downloads folder
 expand "%userprofile%\downloads\*.CAB" c:\Drivers -f:*
 cd Drivers
-for /f "tokens=*" %a in ('dir *.inf /b /s') do (pnputil –i -a "%a\..\*.inf")
-
+for /f "tokens=*" %%a in ('dir *.inf /b /s') do (pnputil –i -a "%%a\..\*.inf")
+echo Launching DevMgmt.msc so you can verify all drivers are installed.
 GOTO End_Routine
 
 
