@@ -88,7 +88,7 @@ ECHO   14. Install Zoom
 ECHO   15. Configure Firefox for Adblock Plus and Flash
 ECHO   16. Configure Chrome for Adblock Plus
 ECHO   17. Change Default App Associations [for new users and profiles]
-ECHO   18. Device Manager: Ensure All Devices Have Drivers
+ECHO   18. Device Manager: Ensure All Devices Have 
 ECHO   19. Get Dell Drivers
 ECHO   20. Install Ricoh 8001 Printer (4th Floor Only)
 ECHO   21. Install Ricoh 4002 Printer (Dean's Office Only)
@@ -235,6 +235,17 @@ ECHO With the introduction of Windows Vista, Windows will not prompt the "Found 
 ECHO any longer and the installation occurs silently. The end user will only see Windows UA prompts 
 ECHO for unsigned driver. Total runtime ~ 10 - 15 minutes depending on number of driver in the CAB file.
 
+reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > NUL && set OS=32BIT || set OS=64BIT
+
+set os_bit = x64
+
+if %OS%==32BIT (
+    echo This is a 32bit operating system
+    os_bit = x32
+)
+if %OS%==64BIT (
+    echo This is a 64bit operating system
+)
 cd /
 md Drivers
 echo Looking for *.cab in %userprofile\downloads folder
