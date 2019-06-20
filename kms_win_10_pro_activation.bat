@@ -29,10 +29,8 @@ goto check_Permissions
         echo ##########################################################
         echo.
         PAUSE
-        PING 127.0.0.1 > NUL 2>&1
         EXIT /B 1
     )
-
     pause >nul
     
 ECHO This will attempt to activate your Windows 10 Pro via KMS.
