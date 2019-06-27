@@ -245,6 +245,16 @@ md Drivers
 echo Looking for *.cab in %userprofile\downloads folder
 expand "%userprofile%\downloads\*.CAB" c:\Drivers -f:*
 cd Drivers
+
+REM cd into the only subdirectory that exists (i.e. 7050, e6530, etc)
+for /d %%F in (*) do cd "%%F" & goto :break
+:break
+REM cd into the only subdirectory that exists (i.e. Win10, Win8)
+for /d %%F in (*) do cd "%%F" & goto :break
+:break
+REM cd into the only subdirectory that exists (i.e. x64)
+cd x64
+
 for /f "tokens=*" %%a in ('dir *.inf /b /s') do (pnputil –i -a "%%a\..\*.inf")
 echo Launching DevMgmt.msc so you can verify all drivers are installed.
 GOTO End_Routine
