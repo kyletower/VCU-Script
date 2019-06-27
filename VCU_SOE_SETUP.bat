@@ -178,41 +178,35 @@ GOTO Menu
 :Install_Chocolatey
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 choco install -y adobereader
-choco install -y flashplayerplugin
-choco install -y googlechrome
-choco install -y jre8
-choco install -y flashplayeractivex
+choco install -y googlechrome-allusers
 choco install -y firefox
 choco install -y vlc
-choco install -y ccleaner
-choco install -y adblockplusie
 choco install -y adblockpluschrome
 choco install -y adblockplusfirefox
+choco install -y adblockplusie
 choco install -y teamviewer
-choco install -y youtube-dl
-choco install -y ffmpeg
 choco install -y windirstat
-choco install -y dotnet4.0
-choco install -y audacity
-choco install -y audacity-lame
-choco install -y rufus
 
-choco install -y notepadplusplus.install
-choco install -y atom
-choco install -y python3
-choco install -y vscode
-choco install -y vscode-csharp
-choco install -y unity
-choco install -y unitywebplayer
+REM choco install -y audacity
+REM choco install -y audacity-lame
+REM choco install -y rufus
+REM choco install -y youtube-dl
+REM choco install -y ffmpeg
+REM choco install -y notepadplusplus.install
+REM choco install -y atom
+REM choco install -y python3
+REM choco install -y vscode
+REM choco install -y vscode-csharp
+REM choco install -y unity
+REM choco install -y unitywebplayer
 
-REM choco install pstools
-REM choco install psexec
-REM choco install teracopy
-REM choco install sudo
+REM choco install -y pstools
+REM choco install -y psexec
+REM choco install -y teracopy
+REM choco install -y sudo
 
 REM choco install zotero-standalone
 REM choco install nsis
-REM choco install googlechrome-allusers
 REM choco install handbrake.install
 REM choco install kodi
 REM choco install autoit
