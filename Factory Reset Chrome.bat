@@ -19,5 +19,6 @@ DEL /F /Q /S "%UserProfile%\Videos\*.*"
 DEL /F /Q /S "%UserProfile%\Music\*.*"
 DEL /F /Q /S "%UserProfile%\Desktop\*.gm81"
 DEL /F /Q /S "%UserProfile%\Desktop\*.gb1"
+ECHO Complete!
 
 PAUSE
